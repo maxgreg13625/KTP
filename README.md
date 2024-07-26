@@ -7,10 +7,10 @@ This script is designed to run at windows env.
 $ source ~/.bashrc
 
 # create new conda env
-$ conda create -n ops python=3.11
+$ conda create -n qpython python=3.11
 
 # activate conda env
-$ source activate ops
+$ source activate qpython
 
 # install required packages
 $ pip install -r requirements.txt
