@@ -14,12 +14,17 @@ def get_config(path: str='') -> ConfigParser:
         config['Required'] = {'test': 'test'}
     return config
 
-def export_config(config: ConfigParser, path: str=''):
+def export_config(config: ConfigParser, path: str='') -> bool:
     if path == '':
         path = os.path.join(os.getcwd(), 'setting', 'encrypt_config.ini')
-
     # in order to keep config key in original case
     config.optionxform = lambda option: option
 
-    with open(path, 'w') as configfile:
-        config.write(configfile)
+    result = True
+    try:
+        with open(path, 'w') as configfile:
+            config.write(configfile)
+    except:
+        result =False
+    return result
+
